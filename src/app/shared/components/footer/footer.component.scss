@@ -1,0 +1,82 @@
+@import "~src/assets/variables";
+
+footer {
+  background-color: $hfColor;
+  border-top: 1px solid $titleColor;
+  margin-top: 30px;
+  padding:20px 0 25px 0;
+  width:100%;
+  //min-height:250px;
+}
+
+.foote_bottom_ul_amrc {
+  list-style-type:none;
+  padding:0;
+  display:table;
+  margin: 10px auto;
+
+  /*li {
+    display:inline;
+
+    a {
+      color:#999;
+      margin:0 12px;
+    }
+  }*/
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  font-family: $defaultFont;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 20px;
+
+  @include breakpoint-to(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  a {
+    color: $titleColor;
+    text-decoration: none;
+
+    &.mail,
+    &.phone {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:before {
+        margin-right: 5px;
+        font-size: 18px;
+      }
+    }
+
+    &.mail {
+      &:before {
+        content: '\2709';
+      }
+    }
+
+    &.phone {
+      &:before {
+        content: '\260E';
+      }
+    }
+  }
+}
+
+.social {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  &__link {
+    color: $titleColor;
+    text-decoration: none;
+  }
+}

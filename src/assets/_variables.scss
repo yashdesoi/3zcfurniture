@@ -1,0 +1,48 @@
+$transition_time: 0.5s;
+$transition__all--ease: all $transition_time ease;
+
+//colors
+$defaultColor: #252525;
+$titleColor: #232323;
+
+//background
+$hfColor: #F1F1F1;
+
+//fonts
+$defaultFont: 'Roboto', sans-serif;
+$titleFont: 'Raleway', sans-serif;
+
+//breakpoints
+$breakpoint-400: 400px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+//breakpoint
+$grid-breakpoints: (
+  xs: 0,
+  sm-400: $breakpoint-400,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl
+);
+
+@mixin breakpoint-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

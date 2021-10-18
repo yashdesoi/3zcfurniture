@@ -1,0 +1,40 @@
+@import "~src/assets/variables";
+
+::ng-deep {
+  .accordion {
+    .mat-accordion {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+      box-shadow: none;
+      border: 2px solid $defaultColor;
+    }
+
+    .mat-expansion-panel-header {
+      padding: 0 14px;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0 14px 16px;
+
+      p {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .mat-expansion-panel,
+    .mat-expansion-panel-header-title,
+    .mat-expansion-panel-header-description {
+      color: $defaultColor;
+    }
+    .mat-expansion-indicator {
+      &::after {
+        color: $defaultColor;
+      }
+    }
+  }
+}

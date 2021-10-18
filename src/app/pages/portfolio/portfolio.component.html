@@ -1,0 +1,42 @@
+
+<!--<mdb-image-modal [modalImages]="images" type="margin"></mdb-image-modal>-->
+<div class="gallery-container">
+
+  <div class="gallery-left-sidebar">
+    <div class="gallery-filter">
+      <div *ngFor="let choice of categoryArr; let i=index" class="col-md-2">
+        <label class="checkbox-container">
+          <span *ngIf="choice === 'bedroomFurniture'">Bedroom Furniture</span>
+          <span *ngIf="choice === 'bespokeTables'">Bespoke Tables</span>
+          <span *ngIf="choice === 'kitchen'">Kitchen</span>
+          <span *ngIf="choice === 'livingRoomFurniture'">Living Room Furniture</span>
+          <span *ngIf="choice === 'underStairsStorage'">Under Stairs Storage</span>
+          <span *ngIf="choice === 'walkInWardrobe'">Walk in Wardrobe</span>
+          <input type="checkbox" [value]="choice" (change)="onCheckChange($event)" checked>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-content">
+
+    <div class="gallery__row">
+      <div *ngIf="filterArray.length > 0" class="gallery">
+
+        <div class="gallery__item" *ngFor="let image of filterArray; index as i">
+          <div class="gallery__item-image-wrap">
+            <img src="{{image.path}}" (click)="showGallery(i)" [alt]="filterArray.category">
+          </div>
+        </div>
+      </div>
+      <div *ngIf="filterArray.length === 0" class="gallery">
+
+        <div class="gallery__item" *ngFor="let image of imageArray; index as i">
+          <div class="gallery__item-image-wrap">
+            <img src="{{image.path}}" (click)="showGallery(i)" [alt]="filterArray.category">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

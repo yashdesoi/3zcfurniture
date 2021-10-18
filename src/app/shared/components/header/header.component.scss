@@ -1,0 +1,104 @@
+@import "~src/assets/variables";
+
+::ng-deep {
+
+  .navbar {
+    align-items: flex-start;
+    background-color: #F1F1F1 !important;
+    border-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 7px 0 0;
+    top: 0;
+    transition: $transition__all--ease;
+    z-index: 15;
+
+    @include breakpoint-to(md) {
+      background-color: white !important;
+      padding: 40px 0 0;
+      transition: $transition__all--ease;
+      border: 0;
+    }
+
+    &__menu {
+      justify-content: flex-end;
+    }
+
+    .navbar-toggler {
+      border: 0 solid transparent;;
+      box-shadow: none;
+      outline: none;
+      padding: 0;
+
+      @include breakpoint-to(md) {
+        display: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border: 0 solid transparent;;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    .navbar-nav,
+    .navbar-collapse {
+      @include breakpoint-to(md) {
+        display: flex !important;
+        flex-basis: auto;
+        flex-direction: row;
+      }
+    }
+
+    .nav-item {
+      position: relative;
+      display: block;
+      margin: 5px 0;
+
+      @include breakpoint-to(md) {
+        margin: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 15px;
+
+        @include breakpoint-to(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        border-bottom: 1px solid;
+        border-color: #000;
+        color: #000;
+        display: block;
+        font-family: $defaultFont;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        padding: 0 0 2px 0;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        @include breakpoint-to(md) {
+          margin: 10px 15px;
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    cursor: pointer;
+    margin-top: 5px;
+    width: 50px;
+
+    @include breakpoint-to(md) {
+      margin-top: 0;
+    }
+  }
+}
